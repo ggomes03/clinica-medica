@@ -1,0 +1,7 @@
+<%= fields = [:id, :nome, :email].join(",")%>
+<% @clients.each do |client| %>
+<% id = client.id %>
+<% nome = client.nome%>
+<% email = client.email%>
+<%= [id.to_s, nome, email].join(",") %>
+<% end %>
