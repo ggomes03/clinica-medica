@@ -8,6 +8,22 @@
     align-items: center;
 }
 
+.navbar p {
+    font-weight: bold;
+}
+
+
 .navbar {
     border-bottom: 1px solid;
+    padding: 20px;
+}
+
+.nav {
+    display: flex;
+    align-items: baseline;
+    align-content: baseline;
+}
+
+.h6 {
+    margin-right: 5px;
 }
