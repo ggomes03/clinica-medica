@@ -13,6 +13,8 @@ gem "sprockets-rails"
 #gems adicionais
 gem 'bootstrap', '~> 5.0'
 
+gem 'devise'
+
 gem 'jquery-rails'
 
 # Use sqlite3 as the database for Active Record
