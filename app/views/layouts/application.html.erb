@@ -11,8 +11,19 @@
   </head>
 
   <body>
+
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    
+    <%= link_to "Dashboard", static_pages_dashboard_path %>
+    <% if current_user %>
+    <%= current_user.email %>
+    
+    <%= link_to "log out", destroy_user_session_path, method: :delete %>
+    <% else%>
+      <%= link_to "Home", root_path%> 
+    <% end %> 
     <%= yield %>
   </body>
 </html>
