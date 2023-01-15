@@ -1,0 +1,6 @@
+<%= fields = [:id, :email].join(",")%>
+<% @users.each do |user| %>
+<% id = user.id %> 
+<% email = user.email%>
+<%= [id.to_s, email].join(",") %>
+<% end%>

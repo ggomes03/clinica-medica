@@ -15,7 +15,11 @@ gem 'bootstrap', '~> 5.0'
 
 gem 'devise'
 
+gem 'csv'
+
 gem 'jquery-rails'
+
+
 
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
