@@ -1,19 +1,20 @@
 .container-lg {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     background: linear-gradient(45deg, #0A58CA, #65f5c0);
-    padding: 50px 20px;
-    margin-top: 50px;
+    padding: 70px 20px;
+    margin-top: 75px;
     border-radius: 15px;
 }
 
 .card {
     margin: 0 30px;
+    border: none;
 }
 
 .card:hover{
-    animation: .2s;
-    border: 1px solid;
+    transition: .3s;
+    box-shadow: 5px 5px 30px  rgb(41, 73, 80);
 }
