@@ -1,0 +1,65 @@
+<%= stylesheet_link_tag 'agendamento' %>
+
+<%= form_with(model: agendamento) do |form| %>
+  <% if agendamento.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(agendamento.errors.count, "error") %> prohibited this agendamento from being saved:</h2>
+
+      <ul>
+        <% agendamento.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p class="h2" >Ficha de agendamento</p>
+<div class="container">
+  <div class="field form-floating mb-3">
+    <%= form.text_field :nome, class: "form-control", autofocus: true, id: "floatingTextarea" %>
+    <%= form.label :nome, for:"floatingTextarea" %>
+  </div>
+
+  <div class="field form-floating">
+    <%= form.text_field :cpf, class: "form-control", id: "floatingTextarea" %>
+    <%= form.label :cpf, style: "display: block" %>
+  </div>
+
+  <br />
+
+  
+  <div class="field form-floating">
+    <%= form.text_field :especialidade, class: "form-control", id: "floatingTextarea" %>
+    <%= form.label :especialidade, style: "display: block" %>
+  </div>
+  
+  <br />
+  
+  <div class="field form-floating">
+    <%= form.text_field :medico, class: "form-control", id: "floatingTextarea" %>
+    <%= form.label :medico, style: "display: block" %>
+  </div>
+  
+
+  <br />
+
+  <div class="dates">
+    <div class="form-date-container">
+      <%= form.label "Data Nascimento", style: "display: block", class:"form-label-date" %>
+      <%= form.date_field :data_nasc, class: "form-date" %>
+    </div>
+
+    <div class="form-date-container">
+      <%= form.label "Data Consulta", style: "display: block", class:"form-label-date" %>
+      <%= form.date_field :data_cons, class: "form-date" %>
+      
+    </div>
+  </div>
+
+  <br />
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-light" %>
+  </div>
+</div>
+<% end %>

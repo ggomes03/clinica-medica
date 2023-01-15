@@ -1,7 +1,9 @@
 <%=stylesheet_link_tag 'dash'%>
 
-<div class="container-lg">
+<p class="h2">Dashboard</p>
 
+<div class="container-lg">
+    
     <div class="card" style="width: 20rem;">
         <img src="<%= asset_path "img1.1.jpg" %>" class="card-img-top" alt="...">
         <div class="card-body">
@@ -16,7 +18,9 @@
         <div class="card-body">
             <h5 class="card-title">Agendamentos</h5>
             <p class="card-text">Realize aqui seu agendamento.</p>
-            <a href="#" class="btn btn-primary">Clique aqui</a>
+
+            <%= link_to "Clique aqui", new_agendamento_path, class: "btn btn-primary"%>
+
         </div>
     </div>
 

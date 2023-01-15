@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_13_233637) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_15_191217) do
+  create_table "agendamentos", force: :cascade do |t|
+    t.string "nome"
+    t.string "cpf"
+    t.date "data_nasc"
+    t.string "especialidade"
+    t.string "medico"
+    t.date "data_cons"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "clients", force: :cascade do |t|
     t.string "nome"
     t.string "pass"
