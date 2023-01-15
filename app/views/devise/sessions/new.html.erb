@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag 'new'%>
-<body>
+
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="body">
     <div class="container"> 
       <p class="h3">Log in</p>
       <div class="field form-floating mb-3">
@@ -32,9 +33,7 @@
       <div class="actions">
         <%= f.submit "Log in", class: "btn btn-primary" %>
       </div>
-
-      
-
     </div>
-  <% end %>
-</body>
+  </div>
+<% end %>
+
