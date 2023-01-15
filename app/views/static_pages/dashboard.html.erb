@@ -1,2 +1,33 @@
-<h1>StaticPages#dashboard</h1>
-<p>Find me in app/views/static_pages/dashboard.html.erb</p>
+<%=stylesheet_link_tag 'dash'%>
+
+<div class="container-lg">
+
+    <div class="card" style="width: 18rem;">
+        <img src="<%= asset_path "img1.1.jpg" %>" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Minhas Consultas</h5>
+            <p class="card-text">Verifique suas consultas.</p>
+            <a href="#" class="btn btn-primary">Clique aqui</a>
+        </div>
+    </div>
+
+
+    <div class="card" style="width: 18rem;">
+        <img src="<%= asset_path "img1.2.jpg" %>" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Agendamentos</h5>
+            <p class="card-text">Realize aqui seu agendamento.</p>
+            <a href="#" class="btn btn-primary">Clique aqui</a>
+        </div>
+    </div>
+
+
+    <div class="card" style="width: 18rem;">
+        <img src="<%= asset_path "background-image.jpg" %>" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Cirúrgias</h5>
+            <p class="card-text">Marque uma cirúgia.</p>
+            <a href="#" class="btn btn-primary">Clique aqui</a>
+        </div>
+    </div>
+</div>

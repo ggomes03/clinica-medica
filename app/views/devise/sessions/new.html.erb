@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag 'new'%>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<body>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="body">
     <div class="container"> 
       <p class="h3">Log in</p>
@@ -36,4 +37,4 @@
     </div>
   </div>
 <% end %>
-
+</body>

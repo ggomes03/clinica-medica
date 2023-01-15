@@ -29,12 +29,13 @@
       <li class="nav-item">
         <%= link_to "Dashboard", static_pages_dashboard_path, class: "nav-link" %>
       </li>
-      <%if current_user%>
-        <li class="nav-item">
-          <%= link_to "CSV", static_pages_dashboard_path(format: :csv), class:"nav-link"%>
-        </li>
-      <%end%>
-      
+      <% if current_user != nil %>
+        <% if current_user.email == "adm.adm@rails.com" %>
+          <li class="nav-item">
+            <%= link_to "CSV", static_pages_dashboard_path(format: :csv), class:"nav-link"%>
+          </li>
+        <% end %>
+      <% end %>
     </ul>
 
     <ul class="nav justify-content-center">
@@ -58,5 +59,6 @@
   </nav>
     
     <%= yield %>
+
   </body>
 </html>
