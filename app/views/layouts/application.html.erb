@@ -31,7 +31,7 @@
       </li>
       <%if current_user%>
         <li class="nav-item">
-          <%= link_to "CSV", csv_usuarios_path(format: :csv), class:"nav-link"%>
+          <%= link_to "CSV", static_pages_dashboard_path(format: :csv), class:"nav-link"%>
         </li>
       <%end%>
       
