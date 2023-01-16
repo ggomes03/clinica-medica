@@ -1,8 +1,9 @@
 .container{
-    margin-top: 20px;
+    margin-top: 40px;
     max-width: 800px;
     min-width: 500px;
     padding: 30px 50px; 
+    
 }
 .dates{
     display: flex;
@@ -20,6 +21,8 @@
     align-content: flex-start;
     align-items: flex-start;
     border-radius: 5px ;
+    border: 1px solid #C4CAD0;
+
 }
 
 .form-date {
@@ -34,4 +37,14 @@
 
 .form-label-date {
     margin-left: 10px;
+}
+
+.btn-pass{
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-pass:hover{
+    background-color: white;
+    color: #2E84D9;
 }

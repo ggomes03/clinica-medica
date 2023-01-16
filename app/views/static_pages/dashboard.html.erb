@@ -1,10 +1,10 @@
 <%=stylesheet_link_tag 'dash'%>
 
-<p class="h2">Dashboard</p>
+<p class="h3">Dashboard</p>
 
 <div class="container-lg">
     
-    <div class="card" style="width: 20rem;">
+    <div class="card" style="width: 40rem;">
         <img src="<%= asset_path "img1.1.jpg" %>" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Minhas Consultas</h5>
@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <div class="card" style="width: 20rem;">
+    <div class="card" style="width: 40rem;">
         <img src="<%= asset_path "img1.2.jpg" %>" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Agendamentos</h5>
@@ -21,16 +21,6 @@
 
             <%= link_to "Clique aqui", new_agendamento_path, class: "btn btn-app"%>
 
-        </div>
-    </div>
-
-
-    <div class="card" style="width: 20rem;">
-        <img src="<%= asset_path "background-image.jpg" %>" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Cirúrgias</h5>
-            <p class="card-text">Marque uma cirúgia.</p>
-            <a href="#" class="btn btn-app">Clique aqui</a>
         </div>
     </div>
 </div>

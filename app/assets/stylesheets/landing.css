@@ -6,7 +6,7 @@
 }
 
 .svg-container {
-    padding: 27px;
+    padding: 30px 40px;
 }
 
 
@@ -18,16 +18,19 @@
 }
 
 .title-container h1 {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Helvetica, sans-serif;
     color: white;
     font-weight: bold;
     margin: 40px 20px 10px 20px;
+    padding: 0 30px;
 }
 
 .title-container h3 {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
     margin: 10px 20px;
+    padding: 0 30px;
+
 
     
 }

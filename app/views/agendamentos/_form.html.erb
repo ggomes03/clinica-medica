@@ -13,37 +13,30 @@
     </div>
   <% end %>
 
-<p class="h2" >Ficha de agendamento</p>
+
 <div class="container">
+
+  <p class="h3" >Ficha de agendamento</p>
   <div class="field form-floating mb-3">
     <%= form.text_field :nome, class: "form-control", autofocus: true, id: "floatingTextarea" %>
     <%= form.label :nome, for:"floatingTextarea" %>
   </div>
-  
-
 
   <div class="field form-floating mb-3">
     <%= form.text_field :cpf, class: "form-control", id: "floatingTextarea" %>
     <%= form.label :cpf, style: "display: block" %>
   </div>
-
- 
-
   
   <div class="field form-floating mb-3">
     <%= form.text_field :especialidade, class: "form-control", id: "floatingTextarea" %>
     <%= form.label :especialidade, style: "display: block" %>
   </div>
   
- 
-  
   <div class="field form-floating mb-3">
     <%= form.text_field :medico, class: "form-control", id: "floatingTextarea" %>
     <%= form.label :medico, style: "display: block" %>
   </div>
   
-  
-
   <div class="dates">
     <div class="form-date-container mb-3">
       <%= form.label "Data Nascimento", style: "display: block", class:"form-label-date" %>
@@ -58,7 +51,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Realizar agendamento", class: "btn btn-pass" %>
+    <%= form.submit "Realizar agendamento", class: "btn btn-app" %>
   </div>
 </div>
 <% end %>

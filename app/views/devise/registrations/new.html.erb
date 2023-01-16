@@ -18,26 +18,24 @@
 
     <div>
       <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em class="txt">(<%= @minimum_password_length %> characters minimum)</em>
       <% end %>
 
-      <div class="field form-floating">
+      <div class="field form-floating mb-3">
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password", id: "floatingPassword" %>
         <%= f.label :password, for: "floatingPassword" %>
       </div>
     </div>
 
-    <br/>
 
-    <div class="field form-floating">
+    <div class="field form-floating mb-3">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Password", id: "floatingPassword" %>
       <%= f.label :password_confirmation, for: "floatingPassword" %>
     </div>
   
-    <br/>
 
     <div class="actions">
-      <%= f.submit "Sign up", class: "btn btn-pass" %>
+      <%= f.submit "Sign up", class: "btn btn-app" %>
     </div>
 
     
