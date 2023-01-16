@@ -12,25 +12,24 @@
   </head>
 
   <body>
-  <nav class="navbar" data-bs-theme="dark>
-    
-    <div class="container-fluid">
-      <div class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M14 20.408c-.492.308-.903.546-1.192.709-.153.086-.308.17-.463.252h-.002a.75.75 0 0 1-.686 0 16.709 16.709 0 0 1-.465-.252 31.147 31.147 0 0 1-4.803-3.34C3.8 15.572 1 12.331 1 8.513 1 5.052 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262A31.146 31.146 0 0 1 14 20.408Z"></path></svg>
-        <p class="h5" >Clínica LRJ</p>
-      </div>
-    </div>
-
-    
+  <nav class="navbar">    
     <ul class="nav justify-content-center">
+
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A58CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
       <li class="nav-item">
         <%= link_to "Home", root_path, class: "nav-link"%>
       </li>
+
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A58CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
       <li class="nav-item">
         <%= link_to "Dashboard", static_pages_dashboard_path, class: "nav-link" %>
       </li>
       <% if current_user != nil %>
         <% if current_user.email == "adm.adm@rails.com" %>
+          
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A58CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
           <li class="nav-item">
             <%= link_to "CSV", static_pages_dashboard_path(format: :csv), class:"nav-link"%>
           </li>
@@ -44,15 +43,15 @@
           <p class="h6"><%= current_user.email %></p>
         </li>
         <li class="nav-item">
-          <%= link_to "log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-outline-primary" %>
+          <%= link_to "log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-app " %>
         </li>
 
       <% else%>
         <li class="nav-item">
-          <%= link_to "Register", new_user_registration_path, class:"btn btn-outline-primary"%>
+          <%= link_to "Register", new_user_registration_path, class:"btn btn-app "%>
         </li>
         <li class="nav-item">
-          <%= link_to "login", new_user_session_path, class:"btn btn-outline-primary"%> 
+          <%= link_to "login", new_user_session_path, class:"btn btn-app"%> 
         </li>
       <% end %> 
     </ul>

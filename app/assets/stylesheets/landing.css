@@ -1,0 +1,58 @@
+.container-landing{
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    
+}
+
+.svg-container {
+    padding: 27px;
+}
+
+
+.title-container {
+    background: linear-gradient(100deg, #59B8EC, #0A58CA);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title-container h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-weight: bold;
+    margin: 40px 20px 10px 20px;
+}
+
+.title-container h3 {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    margin: 10px 20px;
+
+    
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white
+}
+
+.footer p {
+    margin: 10px 20px;
+}
+
+.github {
+    border: 1px solid white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 10px 20px;
+    color: white;
+}
+
+.github:hover {
+    color: white;
+}
