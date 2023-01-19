@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "agendamento"%>
+
 <%= form_with(model: agendamento) do |form| %>
   <% if agendamento.errors.any? %>
     <div style="color: red">
@@ -11,42 +13,55 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome %>
+<div class="container-ag">
+
+  <p class="h3" > Ficha de agendamento </p>
+  <div class="camp nome">
+    <%= form.label "Nome:" %>
+    <%= form.text_field :nome, class:"camp-inp nome" %>
   </div>
 
-  <div>
-    <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
+  <br/>
+
+  <div class="camp">
+    <%= form.label "CPF:" %>
+    <%= form.text_field :cpf, class:"camp-inp cpf " %>
   </div>
 
-  <div>
-    <%= form.label :medico, style: "display: block" %>
-    <%= form.text_field :medico %>
+  <br/>
+
+  <div class="camp">
+    <%= form.label "Medico:" %>
+    <%= form.text_field :medico, class:"camp-inp medico" %>
   </div>
 
-  <div>
-    <%= form.label :especialidade, style: "display: block" %>
-    <%= form.text_field :especialidade %>
+  <br/>
+
+  <div class="camp">
+    <%= form.label "Especialidade:" %>
+    <%= form.text_field :especialidade, class:"camp-inp especialidade" %>
   </div>
 
-  <div>
-    <%= form.label :data_consulta, style: "display: block" %>
-    <%= form.date_field :data_consulta %>
-  </div>
+  <br/>
 
-  <div>
-    <%= form.label :data_nascimento, style: "display: block" %>
-    <%= form.date_field :data_nascimento %>
-  </div>
+  <div class="dates">
+    <div>
+      <%= form.label :data_consulta, style: "display: block"%>
+      <%= form.date_field :data_consulta, class: "form-date" %>
+    </div>
 
+    <div>
+      <%= form.label :data_nascimento, style: "display: block" %>
+      <%= form.date_field :data_nascimento,  class: "form-date" %>
+    </div>
+  </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <br />
 
-  <div>
-    <%= form.submit %>
+  <div class="sub">
+    <%= form.submit "Realizar Agendamento", class: "btn btn-pass btn-agen" %>
   </div>
+</div>
 <% end %>

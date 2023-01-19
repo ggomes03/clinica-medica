@@ -4,10 +4,12 @@
 
 <div id="agendamentos">
   <% @agendamentos.each do |agendamento| %>
-    <%= render agendamento %>
-    <p>
-      <%= link_to "Show this agendamento", agendamento %>
-    </p>
+
+    
+    <% if agendamento.user_id == current_user.id %>
+      <%= render agendamento %>
+    <% end %> 
+
   <% end %>
 </div>
 
