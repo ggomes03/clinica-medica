@@ -3,10 +3,11 @@ class CreateAgendamentos < ActiveRecord::Migration[7.0]
     create_table :agendamentos do |t|
       t.string :nome
       t.string :cpf
-      t.date :data_nasc
-      t.string :especialidade
       t.string :medico
-      t.date :data_cons
+      t.string :especialidade
+      t.date :data_consulta
+      t.date :data_nascimento
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

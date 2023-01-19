@@ -15,11 +15,12 @@ class AgendamentosTest < ApplicationSystemTestCase
     click_on "New agendamento"
 
     fill_in "Cpf", with: @agendamento.cpf
-    fill_in "Data cons", with: @agendamento.data_cons
-    fill_in "Data nasc", with: @agendamento.data_nasc
+    fill_in "Data consulta", with: @agendamento.data_consulta
+    fill_in "Data nascimento", with: @agendamento.data_nascimento
     fill_in "Especialidade", with: @agendamento.especialidade
     fill_in "Medico", with: @agendamento.medico
     fill_in "Nome", with: @agendamento.nome
+    fill_in "User", with: @agendamento.user_id
     click_on "Create Agendamento"
 
     assert_text "Agendamento was successfully created"
@@ -31,11 +32,12 @@ class AgendamentosTest < ApplicationSystemTestCase
     click_on "Edit this agendamento", match: :first
 
     fill_in "Cpf", with: @agendamento.cpf
-    fill_in "Data cons", with: @agendamento.data_cons
-    fill_in "Data nasc", with: @agendamento.data_nasc
+    fill_in "Data consulta", with: @agendamento.data_consulta
+    fill_in "Data nascimento", with: @agendamento.data_nascimento
     fill_in "Especialidade", with: @agendamento.especialidade
     fill_in "Medico", with: @agendamento.medico
     fill_in "Nome", with: @agendamento.nome
+    fill_in "User", with: @agendamento.user_id
     click_on "Update Agendamento"
 
     assert_text "Agendamento was successfully updated"

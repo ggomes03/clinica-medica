@@ -17,7 +17,7 @@ class AgendamentosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create agendamento" do
     assert_difference("Agendamento.count") do
-      post agendamentos_url, params: { agendamento: { cpf: @agendamento.cpf, data_cons: @agendamento.data_cons, data_nasc: @agendamento.data_nasc, especialidade: @agendamento.especialidade, medico: @agendamento.medico, nome: @agendamento.nome } }
+      post agendamentos_url, params: { agendamento: { cpf: @agendamento.cpf, data_consulta: @agendamento.data_consulta, data_nascimento: @agendamento.data_nascimento, especialidade: @agendamento.especialidade, medico: @agendamento.medico, nome: @agendamento.nome, user_id: @agendamento.user_id } }
     end
 
     assert_redirected_to agendamento_url(Agendamento.last)
@@ -34,7 +34,7 @@ class AgendamentosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update agendamento" do
-    patch agendamento_url(@agendamento), params: { agendamento: { cpf: @agendamento.cpf, data_cons: @agendamento.data_cons, data_nasc: @agendamento.data_nasc, especialidade: @agendamento.especialidade, medico: @agendamento.medico, nome: @agendamento.nome } }
+    patch agendamento_url(@agendamento), params: { agendamento: { cpf: @agendamento.cpf, data_consulta: @agendamento.data_consulta, data_nascimento: @agendamento.data_nascimento, especialidade: @agendamento.especialidade, medico: @agendamento.medico, nome: @agendamento.nome, user_id: @agendamento.user_id } }
     assert_redirected_to agendamento_url(@agendamento)
   end
 

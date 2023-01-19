@@ -1,5 +1,3 @@
-<%= stylesheet_link_tag 'agendamento' %>
-
 <%= form_with(model: agendamento) do |form| %>
   <% if agendamento.errors.any? %>
     <div style="color: red">
@@ -13,45 +11,42 @@
     </div>
   <% end %>
 
-
-<div class="container">
-
-  <p class="h3" >Ficha de agendamento</p>
-  <div class="field form-floating mb-3">
-    <%= form.text_field :nome, class: "form-control", autofocus: true, id: "floatingTextarea" %>
-    <%= form.label :nome, for:"floatingTextarea" %>
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
   </div>
 
-  <div class="field form-floating mb-3">
-    <%= form.text_field :cpf, class: "form-control", id: "floatingTextarea" %>
+  <div>
     <%= form.label :cpf, style: "display: block" %>
+    <%= form.text_field :cpf %>
   </div>
-  
-  <div class="field form-floating mb-3">
-    <%= form.text_field :especialidade, class: "form-control", id: "floatingTextarea" %>
-    <%= form.label :especialidade, style: "display: block" %>
-  </div>
-  
-  <div class="field form-floating mb-3">
-    <%= form.text_field :medico, class: "form-control", id: "floatingTextarea" %>
+
+  <div>
     <%= form.label :medico, style: "display: block" %>
-  </div>
-  
-  <div class="dates">
-    <div class="form-date-container mb-3">
-      <%= form.label "Data Nascimento", style: "display: block", class:"form-label-date" %>
-      <%= form.date_field :data_nasc, class: "form-date" %>
-    </div>
-
-    <div class="form-date-container mb-3">
-      <%= form.label "Data Consulta", style: "display: block", class:"form-label-date" %>
-      <%= form.date_field :data_cons, class: "form-date" %>
-      
-    </div>
+    <%= form.text_field :medico %>
   </div>
 
-  <div class="actions">
-    <%= form.submit "Realizar agendamento", class: "btn btn-app" %>
+  <div>
+    <%= form.label :especialidade, style: "display: block" %>
+    <%= form.text_field :especialidade %>
   </div>
-</div>
+
+  <div>
+    <%= form.label :data_consulta, style: "display: block" %>
+    <%= form.date_field :data_consulta %>
+  </div>
+
+  <div>
+    <%= form.label :data_nascimento, style: "display: block" %>
+    <%= form.date_field :data_nascimento %>
+  </div>
+
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <br />
+
+  <div>
+    <%= form.submit %>
+  </div>
 <% end %>

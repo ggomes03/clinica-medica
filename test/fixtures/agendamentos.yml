@@ -3,15 +3,17 @@
 one:
   nome: MyString
   cpf: MyString
-  data_nasc: 2023-01-15
-  especialidade: MyString
   medico: MyString
-  data_cons: 2023-01-15
+  especialidade: MyString
+  data_consulta: 2023-01-18
+  data_nascimento: 2023-01-18
+  user: one
 
 two:
   nome: MyString
   cpf: MyString
-  data_nasc: 2023-01-15
-  especialidade: MyString
   medico: MyString
-  data_cons: 2023-01-15
+  especialidade: MyString
+  data_consulta: 2023-01-18
+  data_nascimento: 2023-01-18
+  user: two
