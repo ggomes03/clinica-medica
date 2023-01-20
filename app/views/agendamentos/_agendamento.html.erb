@@ -1,41 +1,49 @@
-<div id="<%= dom_id agendamento %>">
+<%= stylesheet_link_tag "agendamento"%>
+
+<div class="card-agd" id="<%= dom_id agendamento %>">
 
   <% users = User.all %>
   <% val = users.find(agendamento.user_id) %>
 
-  <p>
-    <strong>Nome:</strong>
-    <%= agendamento.nome %>
-  </p>
+  <div class="line-1">
+    <p class="str">
+      <strong>Nome:</strong>
+      <%= agendamento.nome %>
+    </p>
 
-  <p>
-    <strong>Cpf:</strong>
-    <%= agendamento.cpf %>
-  </p>
+    <p class="str">
+      <strong>Cpf:</strong>
+      <%= agendamento.cpf %>
+    </p>
 
-  <p>
-    <strong>Medico:</strong>
-    <%= agendamento.medico %>
-  </p>
+    <p class="str">
+      <strong>Data nascimento:</strong>
+      <%= agendamento.data_nascimento %>
+    </p>
 
-  <p>
-    <strong>Especialidade:</strong>
-    <%= agendamento.especialidade %>
-  </p>
+   
+  </div>
+  
+  <div class="line-2">
+   
 
-  <p>
-    <strong>Data consulta:</strong>
-    <%= agendamento.data_consulta %>
-  </p>
 
-  <p>
-    <strong>Data nascimento:</strong>
-    <%= agendamento.data_nascimento %>
-  </p>
+     <p class="str">
+      <strong>Medico:</strong>
+      <%= agendamento.medico %>
+    </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= val.email %>
-  </p>
+    <p class="str">
+      <strong>Especialidade:</strong>
+      <%= agendamento.especialidade %>
+    </p>
 
+
+    <p class="str">
+      <strong>Data consulta:</strong>
+      <%= agendamento.data_consulta %>
+    </p>
+    
+  </div>
+ 
 </div>

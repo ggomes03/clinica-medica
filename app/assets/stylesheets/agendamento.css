@@ -58,8 +58,8 @@
 }
 
 .btn-pass:hover{
-    background-color: white;
-    color: #2E84D9;
+    background-color: #2E84D9;
+    color: white;
 }
 
 .camp{
@@ -95,4 +95,52 @@
 
 .btn-agen{
     padding: 10px 30%;
+}
+
+.card-agd {
+    border: 1px solid rgb(216, 216, 216);
+    width: 500px;
+    padding: 30px;
+    display: flex;
+    margin: 20px;
+    border-radius: 5px;
+}   
+
+.card-agd strong {
+    color: #2E84D9;
+}
+
+.card-agd:hover{
+    border: 1px solid #2E84D9;
+    transition: .1s;
+}
+
+.str {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.line-1, .line-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+}   
+
+.line-1 {
+    margin-right: 10px;
+}
+
+
+.line-2 {
+    margin-left: 10px;
+}
+
+.cont-cards {
+    width: 1120px;
+    margin: 0 auto;
+    border: 1px solid #C4CAD0; 
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }
