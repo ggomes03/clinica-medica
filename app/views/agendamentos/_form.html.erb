@@ -16,6 +16,7 @@
 <div class="container-ag">
 
   <p class="h3" > Ficha de agendamento </p>
+  
   <div class="camp nome">
     <%= form.label "Nome:" %>
     <%= form.text_field :nome, class:"camp-inp nome" %>
@@ -25,7 +26,7 @@
 
   <div class="camp">
     <%= form.label "CPF:" %>
-    <%= form.text_field :cpf, class:"camp-inp cpf " %>
+    <%= form.text_field :cpf, class:"camp-inp", id:"cpf" %>
   </div>
 
   <br/>
@@ -39,7 +40,7 @@
 
   <div class="camp">
     <%= form.label "Especialidade:" %>
-    <%= form.text_field :especialidade, class:"camp-inp especialidade" %>
+    <%= form.text_field :especialidade, class:"camp-inp especialidade"%>
   </div>
 
   <br/>

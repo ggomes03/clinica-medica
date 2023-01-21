@@ -19,7 +19,9 @@ gem 'csv'
 
 gem 'jquery-rails'
 
+gem 'jquery-mask-plugin', '~> 1.15'
 
+gem 'jquery_mask_rails', '~> 0.1.0'
 
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"

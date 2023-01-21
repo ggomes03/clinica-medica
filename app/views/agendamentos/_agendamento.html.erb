@@ -1,49 +1,54 @@
 <%= stylesheet_link_tag "agendamento"%>
-
-<div class="card-agd" id="<%= dom_id agendamento %>">
-
+<%if request.path == agendamentos_path %>
+  <div>
+<%else%>
+  <div class="card-agd" id="<%= dom_id agendamento %>">
+<%end%>
   <% users = User.all %>
   <% val = users.find(agendamento.user_id) %>
+  <div class="info">
+    <div class="line-1">
+      <p class="str">
+        <strong>Nome:</strong>
+        <%= agendamento.nome %>
+      </p>
 
-  <div class="line-1">
-    <p class="str">
-      <strong>Nome:</strong>
-      <%= agendamento.nome %>
-    </p>
+      <p class="str">
+        <strong>Cpf:</strong>
+        <%= agendamento.cpf %>
+      </p>
 
-    <p class="str">
-      <strong>Cpf:</strong>
-      <%= agendamento.cpf %>
-    </p>
-
-    <p class="str">
-      <strong>Data nascimento:</strong>
-      <%= agendamento.data_nascimento %>
-    </p>
-
-   
-  </div>
-  
-  <div class="line-2">
-   
-
-
-     <p class="str">
-      <strong>Medico:</strong>
-      <%= agendamento.medico %>
-    </p>
-
-    <p class="str">
-      <strong>Especialidade:</strong>
-      <%= agendamento.especialidade %>
-    </p>
-
-
-    <p class="str">
-      <strong>Data consulta:</strong>
-      <%= agendamento.data_consulta %>
-    </p>
+      <p class="str">
+        <strong>Data nascimento:</strong>
+        <%= agendamento.data_nascimento %>
+      </p>
+    </div>
     
+    <div class="line-2">
+      <p class="str">
+        <strong>Medico:</strong>
+        <%= agendamento.medico %>
+      </p>
+
+      <p class="str">
+        <strong>Especialidade:</strong>
+        <%= agendamento.especialidade %>
+      </p>
+
+
+      <p class="str">
+        <strong>Data consulta:</strong>
+        <%= agendamento.data_consulta %>
+      </p>
+
+    </div>
+   
   </div>
- 
+  <%if agendamento_path(agendamento.id) == request.path %>
+    <div class="btn-id">
+      <%= link_to "Editar", edit_agendamento_path(agendamento), class: "btn btn-pass " %>
+      <%= button_to "Cancelar Consulta", @agendamento, method: :delete, class: "btn btn-pass"%>
+      <%# <%= link_to "Back to agendamentos", agendamentos_path, class: "btn btn-pass " %>
+    </div>
+  <%end%>
 </div>
