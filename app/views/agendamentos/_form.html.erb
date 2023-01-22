@@ -1,68 +1,127 @@
 <%= stylesheet_link_tag "agendamento"%>
 
 <%= form_with(model: agendamento) do |form| %>
-  <% if agendamento.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(agendamento.errors.count, "error") %> prohibited this agendamento from being saved:</h2>
-
-      <ul>
-        <% agendamento.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<div class="container-ag">
-
-  <p class="h3" > Ficha de agendamento </p>
+  <div class="all">
   
-  <div class="camp nome">
-    <%= form.label "Nome:" %>
-    <%= form.text_field :nome, class:"camp-inp nome" %>
-  </div>
+    <% if agendamento.errors.any? %>
+      <div class="erro" id="contentE">
+        <p class="h4">ERRO!</p>
+        <p class="h4">Impossível realizar o agendamento.</p>
+        <% agendamento.errors.each do |error| %>
+            <p class="paragra"><%= error.full_message %></p>
+        <% end %>
+      </div>
+      <style>
+        .erro {
+          display: none;
+        }
 
-  <br/>
+        .h4{
+          font-size: 32px;
+          color: #FF0000;
+        }
 
-  <div class="camp">
-    <%= form.label "CPF:" %>
-    <%= form.text_field :cpf, class:"camp-inp", id:"cpf" %>
-  </div>
+        .block {
+          width: 600px;
+          padding: 20px 20px;
+          display: flex;
+          flex-wrap: wrap;
+          animation: showerror .6s forwards;
+          margin: 80px 10px;
+          border-radius: 15px;
+          border: 1px solid #FF0000;
+        }
 
-  <br/>
+        .block:hover{
+          box-shadow: 1px 1px 5px #FF0000;
+          border: none;
+        }
 
-  <div class="camp">
-    <%= form.label "Medico:" %>
-    <%= form.text_field :medico, class:"camp-inp medico" %>
-  </div>
+        @keyframes showerror{
+          form{
+            opacity: 0;
+            transform: translate3d(-30, 0, 0);
+          } 
+          to {
+            opacity: 1;
+            transform: translate3d(30px, 0, 0);
+          }
+        }
 
-  <br/>
+        .all {
+          display: flex;
+          
+        }
 
-  <div class="camp">
-    <%= form.label "Especialidade:" %>
-    <%= form.text_field :especialidade, class:"camp-inp especialidade"%>
-  </div>
+        .paragra{
+          margin: 0;
+          padding: 0;
+          font-family: Arial, Helvetica, sans-serif;
+  
+        }
+      </style>
 
-  <br/>
+      <script>
+        var elem = document.querySelector("#contentE");
 
-  <div class="dates">
-    <div>
-      <%= form.label :data_consulta, style: "display: block"%>
-      <%= form.date_field :data_consulta, class: "form-date" %>
+        elem.classList.remove('erro');
+        elem.classList.add('block');
+
+      </script>
+    <% end %>
+
+    <div class="container-ag">
+
+      <p class="h3" > Ficha de agendamento </p>
+      
+      <div class="camp nome">
+        <%= form.label "Nome:" %>
+        <%= form.text_field :nome, class:"camp-inp nome" %>
+      </div>
+
+      <br/>
+
+      <div class="camp">
+        <%= form.label "CPF:" %>
+        <%= form.text_field :cpf, class:"camp-inp", id:"cpf" %>
+      </div>
+
+      <br/>
+
+      <div class="camp">
+        <%= form.label "Medico:" %>
+        <%= form.text_field :medico, class:"camp-inp medico" %>
+      </div>
+
+      <br/>
+
+      <div class="camp">
+        <%= form.label "Especialidade:" %>
+        <%= form.text_field :especialidade, class:"camp-inp especialidade"%>
+      </div>
+
+      <br/>
+
+      <div class="dates">
+        <div>
+          <%= form.label "Data da Consulta:", style: "display: block"%>
+          <%= form.date_field :data_consulta, class: "form-date" %>
+        </div>
+
+        <div>
+          <%= form.label "Data de Nascimento:", style: "display: block" %>
+          <%= form.date_field :data_nascimento,  class: "form-date" %>
+        </div>
+      </div>
+
+      <%= form.hidden_field :user_id, value: current_user.id %>
+
+      <br />
+
+      <div class="sub">
+        <%= form.submit "Realizar Agendamento", class: "btn btn-pass btn-agen"%>
+      </div>
     </div>
-
-    <div>
-      <%= form.label :data_nascimento, style: "display: block" %>
-      <%= form.date_field :data_nascimento,  class: "form-date" %>
-    </div>
   </div>
 
-  <%= form.hidden_field :user_id, value: current_user.id %>
-
-  <br />
-
-  <div class="sub">
-    <%= form.submit "Realizar Agendamento", class: "btn btn-pass btn-agen" %>
-  </div>
-</div>
 <% end %>

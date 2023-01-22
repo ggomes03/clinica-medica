@@ -30,4 +30,28 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        agendamento:
+          attributes:
+            nome:  
+              blank: ": campo não pode ficar em branco"
+              invalid: ":conteúdo é inválido"
+            cpf:
+              blank: ": campo não pode ficar em branco"
+              invalid: ":conteúdo é inválido"
+              too_long: ": o conteúdo é muito longo, o tamanho válido para o campo é 11 caracteres"
+              too_short: ": o conteúdo é muito curto, o tamanho válido para o campo é 11 caracteres"
+            medico:
+              blank: ": campo não pode ficar em branco"
+              invalid: ":conteúdo é inválido"
+            especialidade:
+              blank: ": campo não pode ficar em branco"
+              invalid: ":conteúdo é inválido"
+            data_consulta:
+              blank: ": campo não pode ficar em branco"
+              invalid: ":conteúdo é inválido"
+            data_nascimento:
+              blank: ": campo não pode ficar em branco"
+              invalid: ":conteúdo é inválido"
