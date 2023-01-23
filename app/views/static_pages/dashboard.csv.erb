@@ -1,6 +1,10 @@
-<%= fields = [:id, :email].join(",")%>
+<%= fields = [:id, :email, "nº de consultas" ].join(",")%>
 <% @users.each do |user| %>
 <% id = user.id %> 
 <% email = user.email%>
-<%= [id.to_s, email].join(",") %>
+<% consultas = 0 %>
+<% user.agendamento.each do |agen| %>
+<% consultas += 1%>
+<%end%>
+<%= [id.to_s, email, consultas.to_s].join(",") %>
 <% end%>
