@@ -19,6 +19,7 @@ gem 'csv'
 
 gem 'jquery-rails'
 
+
 # gem 'jquery-mask-plugin', '~> 1.15'
 
 # gem 'jquery_mask_rails', '~> 0.1.0'

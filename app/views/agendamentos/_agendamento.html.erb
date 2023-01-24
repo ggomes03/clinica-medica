@@ -1,11 +1,13 @@
 <%= stylesheet_link_tag "agendamento"%>
+
 <%if request.path == agendamentos_path %>
   <div>
 <%else%>
+  <%= link_to "Voltar", agendamentos_path , class: "btn btn-pass " %>
   <div class="card-agd" id="<%= dom_id agendamento %>">
+
 <%end%>
-  <% users = User.all %>
-  <% val = users.find(agendamento.user_id) %>
+  
   <div class="info">
     <div class="line-1">
       <p class="str">
@@ -46,9 +48,10 @@
   </div>
   <%if agendamento_path(agendamento.id) == request.path %>
     <div class="btn-id">
+      
       <%= link_to "Editar", edit_agendamento_path(agendamento), class: "btn btn-pass " %>
       <%= button_to "Cancelar Consulta", @agendamento, method: :delete, class: "btn btn-pass"%>
-      <%# <%= link_to "Back to agendamentos", agendamentos_path, class: "btn btn-pass " %>
+      
     </div>
   <%end%>
 </div>

@@ -2,23 +2,44 @@
 
 <%= form_with(model: agendamento) do |form| %>
   <div class="all">
-
     <% if agendamento.errors.any? %>
-      <div class="erro" id="contentE">
-        <p class="h4">ERRO!</p>
-        <p class="h4">Impossível realizar o agendamento.</p>
-        <% agendamento.errors.each do |error| %>
-            <p class="paragra"><%= error.full_message %></p>
-        <% end %>
-      </div>
-
       <script>
-        var elem = document.querySelector("#contentE");
+        function openModal() {
+          document.getElementById("myModal").classList.add("block");
+          document.getElementById("myModal").style.display = "block";
+        }
 
-        elem.classList.remove('erro');
-        elem.classList.add('block');
+        openModal()
+
+        function closeModal() {
+          document.getElementById("myModal").style.display = "none";
+        }
 
       </script>
+
+      <div class="modal" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title h6">Erro ao realizar agendamento</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+            </div>
+            <div class="modal-body">
+              <% agendamento.errors.each do |error| %>
+                  <p class="msg"><%= error.full_message %></p>      
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .modal-dialog{
+          border: 1px solid #2E84D9;
+          border-radius: 10px;
+        }
+      </style>
+
     <% end %>
   
     <div class="container-ag">
