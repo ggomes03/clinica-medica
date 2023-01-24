@@ -233,3 +233,8 @@
 .att {
     color: red;
 }
+
+.paginate{
+    display: flex;
+    justify-content: center;
+  }

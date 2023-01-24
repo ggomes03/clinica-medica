@@ -6,7 +6,6 @@
   <p class="h3">Agendamentos</p>
 
   <div class="cards">
-
     <%if @agendamentos.size > 0 %>
       <% c = 0 %>
       <% @agendamentos.each do |agendamento| %>
@@ -16,7 +15,7 @@
             <%= render agendamento %>
             <%= link_to "Ver Consulta", agendamento_path(agendamento) , class:"btn btn-pass btn-destroy" %>
           </div>
-        <% end %>   
+        <% end %>  
       <% end %>
     <%end%>
     <%if c == 0 %>
@@ -27,6 +26,7 @@
       </div>
     <%end%>
   </div>
-
+  <div class="paginate">
+    <%= paginate @agendamentos %>
+  </div>
 </div>
-

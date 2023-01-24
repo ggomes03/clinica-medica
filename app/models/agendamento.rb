@@ -8,5 +8,5 @@ class Agendamento < ApplicationRecord
   validates :data_consulta, presence: true   
   validates :data_nascimento, presence: true   
   
-
+  paginates_per 5
 end

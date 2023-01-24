@@ -4,6 +4,7 @@ class AgendamentosController < ApplicationController
   # GET /agendamentos or /agendamentos.json
   def index
     @agendamentos = Agendamento.all
+    .page(params[:page])
   end
 
   # GET /agendamentos/1 or /agendamentos/1.json

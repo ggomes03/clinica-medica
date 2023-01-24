@@ -19,6 +19,8 @@ gem 'csv'
 
 gem 'jquery-rails'
 
+gem 'kaminari'
+
 
 # gem 'jquery-mask-plugin', '~> 1.15'
 
