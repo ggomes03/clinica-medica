@@ -2,7 +2,7 @@
 
 <%= form_with(model: agendamento) do |form| %>
   <div class="all">
-  
+
     <% if agendamento.errors.any? %>
       <div class="erro" id="contentE">
         <p class="h4">ERRO!</p>
@@ -20,9 +20,9 @@
 
       </script>
     <% end %>
-
+  
     <div class="container-ag">
-
+      
       <p class="h3" > Ficha de agendamento </p>
       
       <div class="camp nome">
@@ -75,4 +75,19 @@
     </div>
   </div>
 
+  <script>
+    document.getElementById("cpf").addEventListener("input", function(){
+      if(this.value.length > 14){
+        this.value = this.value.slice(0, 14);
+      }
+    });
+
+    document.getElementById("cpf").addEventListener("input", function(){
+      var value = this.value.replace(/\D/g,'');
+      var v = value.match(/^(\d{3})(\d{3})(\d{3})(\d{2})$/);
+      if(v){
+          this.value = v[1] + "." + v[2] + "." + v[3] + "-" + v[4];
+      }
+    });  
+  </script>
 <% end %>
