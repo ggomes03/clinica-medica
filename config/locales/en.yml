@@ -72,3 +72,14 @@ en:
             data_nascimento:
               blank: ": campo não pode ficar em branco"
               invalid: ":conteúdo é inválido"
+        medico: 
+          attributes: 
+            nome: 
+              blank: ": campo não pode ficar em branco"
+              invalid: ":conteúdo é inválido"
+            crm:
+              blank: ": campo não pode ficar em branco"
+              invalid: ":conteúdo é inválido"
+            especialidade:
+              blank: ": campo não pode ficar em branco"
+              invalid: ":conteúdo é inválido"

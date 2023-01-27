@@ -1,0 +1,40 @@
+<%=stylesheet_link_tag "agendamento"%>
+<%if request.path == medicos_path %>
+  <div>
+<%else%>
+  <%= link_to "Voltar", medicos_path , class: "btn btn-pass " %>
+  <div class="card-agd" id="<%= dom_id medico %>">
+
+<%end%>
+
+  <div class="info">
+    <div class="line-1">
+      <p class="str">
+        <strong>Nome:</strong>
+        <%= medico.nome %>
+      </p>
+
+      <p class="str">
+        <strong>crm:</strong>
+      
+         <%= medico.crm %>
+      </p>
+
+      <p class="str">
+        <strong>especialidade:</strong>
+        <%= medico.especialidade %>
+      </p>
+    </div>
+    
+</div>
+  <%if medico_path(medico.id) == request.path %>
+      <div class="btn-id">
+        
+
+        
+      <%= link_to "Editar", edit_medico_path(@medico), class: "btn btn-pass " %>
+      <%= button_to "Deletar Médico", @medico, method: :delete, class: "btn btn-pass"%>
+      
+      </div>
+    <%end%>
+</div>

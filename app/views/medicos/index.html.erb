@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag "agendamento"%>
+<p style="color: green"><%= notice %></p>
+
+
+
+<div class="agend" id="medicos">
+<p class="h3">Médicos</p>
+<div class="cards">
+    <% c = 0 %>
+ <% @medicos.each do |medico| %>
+    <% c += 1 %>
+    <div class="cont-cards">
+    <%= render medico %>
+    <p>
+      <%= link_to "Ver este médico", medico, class:"btn btn-pass btn-destroy" %>
+    </p>
+    </div>
+  <% end %>
+  <%if c == 0 %>
+      <div class="emp" >
+        <p class="h3">Você não possui nenhum médico cadastrado.</p>
+        
+        <%= link_to "Cadastrar Medicos", new_medico_path, class: "btn btn-app" %>
+      </div>
+    <%end%>
+</div>
+</div>
+
+

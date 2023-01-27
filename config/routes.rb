@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :medicos
   resources :agendamentos
 
 
@@ -6,9 +7,6 @@ Rails.application.routes.draw do
   get 'static_pages/dashboard'
 
  
-
-
-
   devise_for :users
 
   root 'static_pages#landing_page'

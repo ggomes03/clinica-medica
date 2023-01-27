@@ -3,19 +3,7 @@
 <%= form_with(model: agendamento) do |form| %>
   <div class="all">
     <% if agendamento.errors.any? %>
-      <script>
-        function openModal() {
-          document.getElementById("myModal").classList.add("block");
-          document.getElementById("myModal").style.display = "block";
-        }
-
-        openModal()
-
-        function closeModal() {
-          document.getElementById("myModal").style.display = "none";
-        }
-
-      </script>
+      
 
       <div class="modal" id="myModal" tabindex="-1">
         <div class="modal-dialog">
@@ -33,6 +21,20 @@
         </div>
       </div>
 
+      <script>
+        function openModal() {
+          document.getElementById("myModal").classList.add("block");
+          document.getElementById("myModal").style.display = "block";
+        }
+
+        openModal()
+
+        function closeModal() {
+          document.getElementById("myModal").style.display = "none";
+        }
+
+      </script>
+      
       <style>
         .modal-dialog{
           border: 1px solid #2E84D9;

@@ -1,0 +1,67 @@
+<%= stylesheet_link_tag "agendamento"%>
+<%= form_with(model: medico) do |form| %>
+<div class="all">
+  <% if medico.errors.any? %>
+    <div class="modal" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title h6">Erro ao cadastrar o médico</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+            </div>
+            <div class="modal-body">
+              <% medico.errors.each do |error| %>
+                  <p class="msg"><%= error.full_message %></p>      
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function openModal() {
+          document.getElementById("myModal").classList.add("block");
+          document.getElementById("myModal").style.display = "block";
+        }
+
+        openModal()
+
+        function closeModal() {
+          document.getElementById("myModal").style.display = "none";
+        }
+
+      </script>
+      
+      <style>
+        .modal-dialog{
+          border: 1px solid #2E84D9;
+          border-radius: 10px;
+        }
+      </style>
+
+  <% end %>
+
+<div class="container-ag">
+  <p class="h3" > Cadastro de Médico </p>
+  <div class="camp">
+    <%= form.label :nome %>
+    <%= form.text_field :nome , class:"camp-inp nome " %>
+  </div>
+<br />
+  <div class="camp">
+    <%= form.label :crm  %>
+    <%= form.text_field :crm , class:"camp-inp "%>
+  </div>
+<br />
+  <div class="camp">
+    <%= form.label :especialidade %>
+    <%= form.text_field :especialidade,  class:"camp-inp " %>
+  </div>
+<br />
+    <div class="sub">
+       <%= form.submit "Realizar Cadastro", class: "btn btn-pass btn-agen"%>
+    </div>
+  </div>
+  </div>
+<% end %>
+  

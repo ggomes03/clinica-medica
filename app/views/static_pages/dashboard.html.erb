@@ -23,4 +23,17 @@
 
         </div>
     </div>
+
+    <%if current_user.email == "adm.adm@rails.com"%>
+        <div class="card" style="width: 40rem;">
+            <img src="<%= asset_path "medico.jpg" %>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Cadastro de Médico</h5>
+                <p class="card-text">Realize aqui o cadastro do médico.</p>
+
+                <%= link_to "Clique aqui", new_medico_path, class: "btn btn-app" %>
+
+            </div>
+        </div>
+    <%end%>    
 </div>
