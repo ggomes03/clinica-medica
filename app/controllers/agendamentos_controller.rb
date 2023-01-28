@@ -23,16 +23,20 @@ class AgendamentosController < ApplicationController
   # POST /agendamentos or /agendamentos.json
   def create
     @agendamento = Agendamento.new(agendamento_params)
-
-    respond_to do |format|
-      if @agendamento.save
-        format.html { redirect_to agendamento_url(@agendamento), notice: "Agendamento foi realizado com sucesso." }
-        format.json { render :show, status: :created, location: @agendamento }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @agendamento.errors, status: :unprocessable_entity }
+    medico_cadastrado = Medico.find_by(nome: @agendamento.medico)
+    if medico_cadastrado
+      respond_to do |format|
+        if @agendamento.save
+         format.html { redirect_to agendamento_url(@agendamento), notice: "Agendamento foi realizado com sucesso." }
+         format.json { render :show, status: :created, location: @agendamento }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @agendamento.errors, status: :unprocessable_entity }
       end
     end
+  else
+    redirect_to new_agendamento_path, notice:"Médico não encontrado"
+  end
   end
 
   # PATCH/PUT /agendamentos/1 or /agendamentos/1.json

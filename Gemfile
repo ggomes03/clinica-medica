@@ -21,6 +21,10 @@ gem 'jquery-rails'
 
 gem 'kaminari'
 
+gem 'prawn-rails'
+
+
+
 
 # gem 'jquery-mask-plugin', '~> 1.15'
 

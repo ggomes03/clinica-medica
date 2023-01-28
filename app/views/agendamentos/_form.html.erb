@@ -1,5 +1,9 @@
 <%= stylesheet_link_tag "agendamento"%>
-
+<% flash.each do |type,msg| %>
+<div>
+<%= msg%>
+</div>
+<%end%>
 <%= form_with(model: agendamento) do |form| %>
   <div class="all">
     <% if agendamento.errors.any? %>
@@ -64,7 +68,7 @@
 
       <div class="camp">
         <%= form.label "Medico:" %>
-        <%= form.text_field :medico, class:"camp-inp medico" %>
+        <%= form.text_field :medico, class:"camp-inp medico" %> 
       </div>
 
       <br/>

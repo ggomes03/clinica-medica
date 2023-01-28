@@ -1,4 +1,10 @@
 <%= stylesheet_link_tag "agendamento"%>
+
+<% flash.each do |type,msg| %>
+<div>
+<%= msg%>
+</div>
+<%end%>
 <%= form_with(model: medico) do |form| %>
 <div class="all">
   <% if medico.errors.any? %>

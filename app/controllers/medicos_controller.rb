@@ -1,9 +1,11 @@
 class MedicosController < ApplicationController
   before_action :set_medico, only: %i[ show edit update destroy ]
+  
 
   # GET /medicos or /medicos.json
   def index
     @medicos = Medico.all
+    .page(params[:page])
   end
 
   # GET /medicos/1 or /medicos/1.json
@@ -13,6 +15,8 @@ class MedicosController < ApplicationController
   # GET /medicos/new
   def new
     @medico = Medico.new
+    
+     
   end
 
   # GET /medicos/1/edit
@@ -22,8 +26,15 @@ class MedicosController < ApplicationController
   # POST /medicos or /medicos.json
   def create
     @medico = Medico.new(medico_params)
+    medico_cadastrado = Medico.all.any?{|m| m.crm==@medico.crm}
+    if medico_cadastrado
+      redirect_to new_medico_path,notice:"Médico já cadastrado"
+    else
 
     respond_to do |format|
+      # if medico_cadastrado
+        #  format.html { redirect_to new_medico_path, notice: "Medico já cadastrado." }
+        #  format.json { render json: @medico.errors, status: :unprocessable_entity }
       if @medico.save
         format.html { redirect_to medico_url(@medico), notice: "Medico was successfully created." }
         format.json { render :show, status: :created, location: @medico }
@@ -32,6 +43,7 @@ class MedicosController < ApplicationController
         format.json { render json: @medico.errors, status: :unprocessable_entity }
       end
     end
+  end
   end
 
   # PATCH/PUT /medicos/1 or /medicos/1.json
