@@ -28,9 +28,11 @@
     
 </div>
   <%if medico_path(medico.id) == request.path %>
+    <%if current_user.email == "adm.adm@rails.com"%>
        <div class="btn-id">
         <%= link_to "Editar", edit_medico_path(@medico), class: "btn btn-pass " %>
         <%= button_to "Deletar Médico", @medico, method: :delete, class: "btn btn-pass"%>
       </div>
     <%end%>
+  <%end%>
 </div>

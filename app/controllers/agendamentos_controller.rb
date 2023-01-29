@@ -35,7 +35,7 @@ class AgendamentosController < ApplicationController
       end
     end
   else
-    redirect_to new_agendamento_path, notice:"Médico não encontrado"
+     redirect_to new_agendamento_path, notice:"Médico não encontrado"
   end
   end
 
